@@ -12,6 +12,30 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Rasodu Chulha | Authentic Rajasthani Dal Baati">
 <meta name="twitter:description" content="Ghar Jaisa Swad, Dil Se Bana — authentic Rajasthani Dal Baati at ₹249 per plate.">
+<meta name="theme-color" content="#F8F2E7">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Restaurant",
+  "name": "Rasodu Chulha",
+  "telephone": "+916355538898",
+  "servesCuisine": "Indian",
+  "sameAs": ["https://www.instagram.com/rasoduchulha/"],
+  "hasMenu": {
+    "@type": "Menu",
+    "hasMenuItem": {
+      "@type": "MenuItem",
+      "name": "Authentic Rajasthani Dal Baati",
+      "description": "Dal, baati, garlic chutney, pickle and fresh salad.",
+      "offers": {
+        "@type": "Offer",
+        "price": "249",
+        "priceCurrency": "INR"
+      }
+    }
+  }
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -41,6 +65,10 @@ section{padding:88px 0;}
 .card{background:var(--card); border:1px solid var(--line); border-radius:20px;}
 .reveal{opacity:0; transform:translateY(18px); transition:opacity .7s ease, transform .7s ease;}
 .reveal.in{opacity:1; transform:none;}
+@media (prefers-reduced-motion: reduce){
+  .reveal{opacity:1; transform:none; transition:none;}
+  *{scroll-behavior:auto !important; animation-duration:.001ms !important; animation-iteration-count:1 !important; transition-duration:.001ms !important;}
+}
 
 .icon{width:30px; height:30px; stroke:var(--terracotta); fill:none; stroke-width:1.5;}
 .chulha-pattern{background-image:radial-gradient(var(--line) 1px, transparent 1px); background-size:16px 16px;}
@@ -63,6 +91,16 @@ section{padding:88px 0;}
 .field label{display:block; font-size:13px; font-weight:600; margin-bottom:6px; color:var(--brown);}
 .field input,.field textarea{width:100%; padding:12px 14px; border-radius:12px; border:1px solid var(--line); background:#fff; font-family:inherit; font-size:15px;}
 .field{margin-bottom:16px;}
+.review-modal-overlay{position:fixed; inset:0; background:rgba(36,20,8,.55); display:none; align-items:flex-end; justify-content:center; z-index:100; padding:0;}
+.review-modal-overlay.open{display:flex;}
+@media(min-width:640px){.review-modal-overlay{align-items:center; padding:24px;}}
+.star-btn{background:none; border:none; cursor:pointer; color:#c9b89a; padding:2px; line-height:1; touch-action:manipulation;}
+.star-btn:focus-visible{outline:2px solid var(--terracotta); outline-offset:2px; border-radius:4px;}
+.star-btn.filled{color:var(--saffron);}
+.instagram-link{display:inline-flex; align-items:center; gap:8px; min-height:44px; min-width:44px; padding:6px 10px 6px 2px; margin-top:6px; color:#d8c6b0; border-radius:10px; transition:color .15s ease, background .15s ease;}
+.instagram-link:hover, .instagram-link:focus-visible{color:#fff; background:rgba(255,255,255,.08);}
+.instagram-link:focus-visible{outline:2px solid var(--saffron); outline-offset:2px;}
+.instagram-link span{font-size:14px;}
 .qty-btn{width:44px; height:44px; border-radius:12px; border:1px solid var(--line); background:#fff; font-size:20px; cursor:pointer; touch-action:manipulation;}
 .qty-btn:active{background:var(--cream2); transform:scale(.95);}
 
@@ -300,6 +338,100 @@ nav{position:sticky; top:0; z-index:70; backdrop-filter:blur(10px); background:r
 </section>
 <style>@media(min-width:800px){#storyGrid{grid-template-columns:1.1fr 1fr;}}</style>
 
+<!-- TRUST -->
+<section>
+  <div class="wrap">
+    <p class="eyebrow" style="text-align:center;">What You Can Expect</p>
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:24px; margin-top:20px;">
+      <div class="card reveal" style="padding:26px; text-align:center;">
+        <h3 style="font-size:16px; margin:0 0 6px;">Freshly Prepared</h3>
+        <p style="font-size:13.5px; color:#5c4636;">Prepared fresh for your order.</p>
+      </div>
+      <div class="card reveal" style="padding:26px; text-align:center;">
+        <h3 style="font-size:16px; margin:0 0 6px;">Homemade Taste</h3>
+        <p style="font-size:13.5px; color:#5c4636;">Comforting Rajasthani-style flavours made with care.</p>
+      </div>
+      <div class="card reveal" style="padding:26px; text-align:center;">
+        <h3 style="font-size:16px; margin:0 0 6px;">Traditional Flavours</h3>
+        <p style="font-size:13.5px; color:#5c4636;">A simple plate inspired by familiar home-style food.</p>
+      </div>
+      <div class="card reveal" style="padding:26px; text-align:center;">
+        <h3 style="font-size:16px; margin:0 0 6px;">Easy Ordering</h3>
+        <p style="font-size:13.5px; color:#5c4636;">Order directly through WhatsApp.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ORDER & DELIVERY -->
+<section style="background:var(--cream2);">
+  <div class="wrap" style="max-width:620px; text-align:center;">
+    <p class="eyebrow">Order &amp; Delivery</p>
+    <h2 class="display" style="font-size:clamp(22px,3.5vw,28px); font-weight:600; margin:10px 0 14px;">How ordering works</h2>
+    <p style="color:#5c4636; line-height:1.7;">Order through WhatsApp and we'll confirm availability and delivery details based on your location.</p>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section id="reviews">
+  <div class="wrap" style="text-align:center;">
+    <p class="eyebrow">Loved Your Dal Baati?</p>
+    <h2 class="display" style="font-size:clamp(24px,4vw,32px); font-weight:600; margin:10px 0 10px;">Share your experience with Rasodu Chulha.</h2>
+    <button class="btn btn-primary" style="margin-bottom:36px;" onclick="openReviewModal()">Share Your Review</button>
+    <div id="reviewsList" style="max-width:640px; margin:0 auto;">
+      <div class="card reveal" style="padding:36px 24px;">
+        <p style="font-size:16px; color:#5c4636; margin:0 0 16px;">Be the first to share your Dal Baati experience.</p>
+        <button class="btn btn-outline" onclick="openReviewModal()">Share Your Review</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEW MODAL -->
+<div id="reviewModal" class="review-modal-overlay">
+  <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="reviewModalTitle" style="text-align:left;">
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:18px;">
+      <h3 id="reviewModalTitle" class="display" style="font-size:20px; margin:0;">Share Your Review</h3>
+      <button onclick="closeReviewModal()" aria-label="Close" style="background:none; border:none; font-size:24px; cursor:pointer; color:var(--brown); padding:4px;">&times;</button>
+    </div>
+    <div id="reviewFormView">
+      <div class="field">
+        <label for="revName">Name</label>
+        <input id="revName" type="text" placeholder="Your name" required>
+      </div>
+      <div class="field">
+        <label id="revRatingLabel">Rating</label>
+        <div id="starRating" role="radiogroup" aria-labelledby="revRatingLabel" style="display:flex; gap:6px; font-size:28px;">
+          <button type="button" class="star-btn" data-value="1" role="radio" aria-checked="false" aria-label="1 star">☆</button>
+          <button type="button" class="star-btn" data-value="2" role="radio" aria-checked="false" aria-label="2 stars">☆</button>
+          <button type="button" class="star-btn" data-value="3" role="radio" aria-checked="false" aria-label="3 stars">☆</button>
+          <button type="button" class="star-btn" data-value="4" role="radio" aria-checked="false" aria-label="4 stars">☆</button>
+          <button type="button" class="star-btn" data-value="5" role="radio" aria-checked="false" aria-label="5 stars">☆</button>
+        </div>
+      </div>
+      <div class="field">
+        <label for="revText">Review / Suggestion</label>
+        <textarea id="revText" rows="3" placeholder="Tell us about your Dal Baati..." required></textarea>
+      </div>
+      <div class="field">
+        <label for="revPhoto">📷 Add your food photo (optional)</label>
+        <input id="revPhoto" type="file" accept="image/jpeg,image/jpg,image/png,image/webp">
+        <div id="revPhotoPreviewWrap" style="display:none; margin-top:10px; position:relative; max-width:160px;">
+          <img id="revPhotoPreview" src="" alt="Preview of your uploaded food photo" style="width:100%; border-radius:12px; display:block;">
+          <button type="button" onclick="removeReviewPhoto()" aria-label="Remove photo" style="position:absolute; top:-8px; right:-8px; background:var(--brown-dk); color:#fff; border:none; border-radius:50%; width:26px; height:26px; cursor:pointer;">&times;</button>
+        </div>
+      </div>
+      <p id="revError" style="color:var(--terracotta); font-size:13px; display:none; margin:0 0 12px;"></p>
+      <button class="btn btn-primary" style="width:100%; padding:16px 30px;" onclick="submitReview()">Submit Review</button>
+    </div>
+    <div id="reviewThanksView" style="display:none; text-align:center; padding:20px 0;">
+      <p class="display" style="font-size:22px; font-weight:600; margin:0 0 10px;">Thank you!</p>
+      <p style="color:#5c4636; margin:0 0 22px;">Your review has been received and will be reviewed before appearing on the website.</p>
+      <button class="btn btn-primary" onclick="closeReviewModal()">Close</button>
+    </div>
+  </div>
+</div>
+
 <!-- MADE FRESH -->
 <section>
   <div class="wrap">
@@ -343,8 +475,12 @@ nav{position:sticky; top:0; z-index:70; backdrop-filter:blur(10px); background:r
     <div>
       <p class="display" style="color:#fff; font-size:19px; font-weight:600; margin:0;">Rasodu Chulha</p>
       <p style="margin:4px 0 0; font-size:14px;">Ghar Jaisa Swad, Dil Se Bana</p>
-      <p style="margin:4px 0 0; font-size:14px;"><a href="tel:6355538898">6355538898</a></p>
-      <p style="margin:4px 0 0; font-size:14px;"><a href="https://www.instagram.com/rasoduchulha/" target="_blank" rel="noopener">Instagram</a></p>
+      <p style="margin:8px 0 0; font-size:13px; color:#b8a58c; max-width:340px;">Homemade Rajasthani Dal Baati, prepared fresh and served with dal, baati, garlic chutney, pickle and fresh salad.</p>
+      <p style="margin:8px 0 0; font-size:14px;"><a href="tel:6355538898">6355538898</a></p>
+      <a href="https://www.instagram.com/rasoduchulha/" target="_blank" rel="noopener" class="instagram-link" aria-label="Follow Rasodu Chulha on Instagram">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4.2" stroke="currentColor" stroke-width="1.8"/><circle cx="17.3" cy="6.7" r="1.1" fill="currentColor"/></svg>
+        <span>Instagram</span>
+      </a>
     </div>
     <div style="display:flex; gap:20px; font-size:14px;">
       <a href="#top">Home</a><a href="#plate">Menu</a><a href="#story">Our Story</a><a href="#thali">Order</a>
@@ -353,6 +489,9 @@ nav{position:sticky; top:0; z-index:70; backdrop-filter:blur(10px); background:r
       <span style="font-weight:600;">₹249 / Plate</span>
       <button class="btn btn-primary" style="padding:10px 20px;" onclick="openModal()">Order Now</button>
     </div>
+  </div>
+  <div class="wrap" style="margin-top:28px; padding-top:20px; border-top:1px solid rgba(255,255,255,.1); font-size:12.5px; color:#a89075;">
+    © <span id="footerYear"></span> Rasodu Chulha. All rights reserved.
   </div>
 </footer>
 
@@ -411,12 +550,12 @@ function closeModal(){
 function orderOnWhatsApp(){
   const total = qty * PRICE;
   const plateWord = qty > 1 ? 'plates' : 'plate';
-  const msg = `Hi, I would like to order ${qty} ${plateWord} of Dal Baati from Rasodu Chulha.%0A%0ATotal: ₹${total}%0A%0APlease share the next steps.`;
-  window.open(`https://wa.me/916355538898?text=${msg}`, '_blank');
+  const msg = `Hi Rasodu Chulha,\n\nI'd like to order:\n\nDal Baati\nQuantity: ${qty} ${plateWord}\nTotal: ₹${total}\n\nPlease confirm availability and delivery details.\n\nThank you.`;
+  window.open(`https://wa.me/916355538898?text=${encodeURIComponent(msg)}`, '_blank');
 }
 
 document.getElementById('orderModal').addEventListener('click', e=>{ if(e.target.id==='orderModal') closeModal(); });
-document.addEventListener('keydown', e=>{ if(e.key === 'Escape') closeModal(); });
+document.addEventListener('keydown', e=>{ if(e.key === 'Escape'){ closeModal(); closeReviewModal(); } });
 
 function toggleNav(){
   const panel = document.getElementById('navMobilePanel');
@@ -428,6 +567,92 @@ function closeNav(){
   document.getElementById('navMobilePanel').classList.remove('open');
   document.querySelector('.hamburger').setAttribute('aria-expanded', 'false');
 }
+
+/* --- Reviews (front-end only: no backend exists to store or moderate
+   submissions yet; see chat notes for what a production version needs) --- */
+let reviewRating = 0;
+let reviewPhotoDataUrl = null;
+
+function openReviewModal(){
+  document.getElementById('reviewModal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+  document.getElementById('reviewFormView').style.display = '';
+  document.getElementById('reviewThanksView').style.display = 'none';
+}
+function closeReviewModal(){
+  document.getElementById('reviewModal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+document.getElementById('reviewModal').addEventListener('click', e=>{ if(e.target.id==='reviewModal') closeReviewModal(); });
+
+document.querySelectorAll('.star-btn').forEach(btn=>{
+  btn.addEventListener('click', ()=>{
+    reviewRating = parseInt(btn.dataset.value, 10);
+    document.querySelectorAll('.star-btn').forEach(b=>{
+      const v = parseInt(b.dataset.value, 10);
+      const on = v <= reviewRating;
+      b.classList.toggle('filled', on);
+      b.textContent = on ? '★' : '☆';
+      b.setAttribute('aria-checked', v === reviewRating ? 'true' : 'false');
+    });
+  });
+});
+
+document.getElementById('revPhoto').addEventListener('change', e=>{
+  const file = e.target.files[0];
+  const errEl = document.getElementById('revError');
+  errEl.style.display = 'none';
+  if(!file) return;
+  const okTypes = ['image/jpeg','image/jpg','image/png','image/webp'];
+  if(!okTypes.includes(file.type)){
+    errEl.textContent = 'Please choose a JPG, PNG or WEBP image.';
+    errEl.style.display = 'block';
+    e.target.value = '';
+    return;
+  }
+  if(file.size > 8 * 1024 * 1024){
+    errEl.textContent = 'That photo is too large. Please choose one under 8MB.';
+    errEl.style.display = 'block';
+    e.target.value = '';
+    return;
+  }
+  const reader = new FileReader();
+  reader.onload = ()=>{
+    reviewPhotoDataUrl = reader.result;
+    document.getElementById('revPhotoPreview').src = reviewPhotoDataUrl;
+    document.getElementById('revPhotoPreviewWrap').style.display = 'block';
+  };
+  reader.readAsDataURL(file);
+});
+function removeReviewPhoto(){
+  reviewPhotoDataUrl = null;
+  document.getElementById('revPhoto').value = '';
+  document.getElementById('revPhotoPreviewWrap').style.display = 'none';
+}
+
+function submitReview(){
+  const name = document.getElementById('revName').value.trim();
+  const text = document.getElementById('revText').value.trim();
+  const errEl = document.getElementById('revError');
+  if(!name || !text || reviewRating === 0){
+    errEl.textContent = 'Please add your name, a rating and a short review.';
+    errEl.style.display = 'block';
+    return;
+  }
+  errEl.style.display = 'none';
+  // No backend/database exists yet to store or moderate this submission —
+  // this only shows a confirmation. Wiring real storage + an approval step
+  // is required before reviews can appear on the live site.
+  document.getElementById('reviewFormView').style.display = 'none';
+  document.getElementById('reviewThanksView').style.display = 'block';
+  document.getElementById('revName').value = '';
+  document.getElementById('revText').value = '';
+  removeReviewPhoto();
+  reviewRating = 0;
+  document.querySelectorAll('.star-btn').forEach(b=>{ b.classList.remove('filled'); b.textContent='☆'; b.setAttribute('aria-checked','false'); });
+}
+
+document.getElementById('footerYear').textContent = new Date().getFullYear();
 
 const io = new IntersectionObserver((entries)=>{ entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('in'); }); }, {threshold:.12});
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
